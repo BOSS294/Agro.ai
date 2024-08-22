@@ -1,0 +1,76 @@
+/* General Footer Styles */
+footer {
+    background-color: #1a1a1a; /* Dark background for contrast */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-brand {
+    margin-bottom: 20px;
+}
+
+.brand-name {
+    font-size: 36px; /* Modern and bold font size */
+    font-weight: 700;
+    color: #ffffff; /* Shining white */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Shining effect */
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+}
+
+.brand-name:hover {
+    color: #00ff00; /* Hover color */
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.8); /* Brighter shining effect */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.brand-description {
+    font-size: 16px;
+    max-width: 600px; /* Align text and prevent stretching */
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.footer-links {
+    margin-top: 20px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s, text-decoration 0.3s;
+    margin: 0 10px;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background-color: #00ff00; /* Underline color */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: #00ff00; /* Hover color */
+}
+
+.footer-link:hover::after {
+    transform: scaleX(1); /* Underline animation */
+}

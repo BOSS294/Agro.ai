@@ -5,7 +5,25 @@
     align-items: center;
     height: 100vh; /* Full viewport height */
     background-color: #000; /* Black background */
-    animation: fadeIn 1s ease-in-out; /* Animation on load */
+}
+/* Customize the scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #333; /* Track background */
+    border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000; /* Scrollbar color */
+    border-radius: 10px; /* Round the corners */
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
 }
 
 /* Container Styles */
@@ -23,6 +41,8 @@
     gap: 20px; /* Space between upload and text */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     position: relative; /* For positioning hover effects */
+    animation: scale-up-hor-left   1s ease; /* Animation on load */
+
 }
 
 /* Hover Effects for Container */
@@ -31,18 +51,40 @@
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5); /* Enhanced shadow on hover */
 }
 
-/* Animation for Container on Load */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.scale-up-hor-left {
+	-webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-
+@-webkit-keyframes scale-up-hor-left {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+  }
+  @keyframes scale-up-hor-left {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 0% 0%;
+              transform-origin: 0% 0%;
+    }
+  }
+  
+  
 /* Upload Form Styles */
 .upload-form {
     display: flex;
@@ -131,35 +173,30 @@
 .upload-text {
     animation: textFadeIn 1s ease-out; /* Animation on load */
 }
-/* Progress Container Styles */
+
 .progress-container {
     width: 100%;
     height: 5px;
-    background-color: #333; /* Dark background for progress bar */
-    border-radius: 5px; /* Rounded corners */
-    overflow: hidden;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
     margin-top: 10px;
-    position: relative;
 }
 
-/* Progress Bar Styles */
 .progress-bar {
     height: 100%;
+    background-color: #4caf50;
     width: 0%;
-    background-color: #0f0; /* Green background for progress */
-    transition: width 0.4s ease-in-out; /* Smooth transition */
+    transition: width 0.4s ease;
 }
 
 /* Image Preview Styles */
 .image-preview {
     width: 100%; /* Full width of upload area */
-    height: 100%; /* Full height of upload area */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: absolute; /* Absolute positioning */
-    top: 0;
     left: 0;
     z-index: 1;
 }
@@ -208,4 +245,158 @@ input[type="file"] {
     width: 100%;
     height: 100%;
     cursor: pointer;
+}
+/* General Styles for All Devices */
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+        height: auto; /* Allow container height to adjust */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand {
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+
+    .footer-link {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 10px;
+        height: auto; /* Allow container height to adjust */
+    }
+
+    .upload-container {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .upload-area {
+        padding: 15px;
+        height: auto; /* Adjust height automatically */
+    }
+
+    .upload-description {
+        font-size: 14px; /* Smaller font size */
+        margin: 15px 0; /* Adjust margins */
+    }
+
+    .upload-button {
+        font-size: 14px; /* Smaller font size */
+        padding: 10px 20px; /* Adjust padding */
+        margin-left: 0; /* Center button */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        height: 90vh; /* Set height to 90% of viewport height */
+        width: 90vw; /* Set width to 90% of viewport width */
+    }
+
+    .upload-container {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .upload-area {
+        padding: 10px;
+    }
+
+    .upload-description {
+        font-size: 12px; /* Smaller font size */
+        margin: 10px 0; /* Adjust margins */
+    }
+
+    .upload-button {
+        font-size: 12px; /* Smaller font size */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .footer-link {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 5px;
+        height: 90vh; /* Set height to 90% of viewport height */
+        width: 90vw; /* Set width to 90% of viewport width */
+    }
+
+    .upload-container {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .upload-area {
+        padding: 5px;
+    }
+
+    .upload-description {
+        font-size: 10px; /* Smaller font size */
+        margin: 5px 0; /* Adjust margins */
+    }
+
+    .upload-button {
+        font-size: 10px; /* Smaller font size */
+        padding: 6px 12px; /* Adjust padding */
+    }
+
+    .footer-brand {
+        font-size: 24px; /* Smaller brand name */
+    }
+
+    .footer-description {
+        font-size: 12px; /* Smaller description font size */
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        height: 90vh; /* Set height to 90% of viewport height */
+        width: 90vw; /* Set width to 90% of viewport width */
+    }
+
+    .upload-description {
+        font-size: 10px; /* Smaller font size */
+        margin: 3px 0; /* Adjust margins */
+    }
+
+    .upload-button {
+        font-size: 8px; /* Very small font size */
+        padding: 4px 8px; /* Adjust padding */
+    }
+
+    .footer-brand {
+        font-size: 20px; /* Even smaller brand name */
+    }
+
+    .footer-description {
+        font-size: 10px; /* Smaller description font size */
+    }
+
+    .footer-link {
+        font-size: 14px; /* Smaller link font size */
+    }
 }

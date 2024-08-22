@@ -1,37 +1,24 @@
 <?php
-$target_dir = "Assets/Images/";
-$target_file = $target_dir . basename($_FILES["file-upload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$response = ['success' => false];
 
-// Check if image file is an actual image or fake image
-if (isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["file-upload"]["tmp_name"]);
-    if ($check !== false) {
-        $uploadOk = 1;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_FILES['file-upload']) && $_FILES['file-upload']['error'] === UPLOAD_ERR_OK) {
+        $uploadDir = __DIR__ . '/'; // Ensure this is correct path where you want to save files
+        $uploadFile = $uploadDir . basename($_FILES['file-upload']['name']);
+
+        // Move the uploaded file to the target directory
+        if (move_uploaded_file($_FILES['file-upload']['tmp_name'], $uploadFile)) {
+            $response['success'] = true;
+            $response['fileName'] = basename($_FILES['file-upload']['name']);
+        } else {
+            $response['message'] = 'File move failed.';
+        }
     } else {
-        echo json_encode(["success" => false]);
-        exit;
+        $response['message'] = 'No file uploaded or upload error.';
     }
-}
-
-// Check file size
-if ($_FILES["file-upload"]["size"] > 5000000) { // 5MB limit
-    echo json_encode(["success" => false]);
-    exit;
-}
-
-// Allow certain file formats
-$allowedFormats = ["jpg", "jpeg", "png", "gif"];
-if (!in_array($imageFileType, $allowedFormats)) {
-    echo json_encode(["success" => false]);
-    exit;
-}
-
-// Try to upload file
-if (move_uploaded_file($_FILES["file-upload"]["tmp_name"], $target_file)) {
-    echo json_encode(["success" => true, "fileName" => basename($_FILES["file-upload"]["name"])]);
 } else {
-    echo json_encode(["success" => false]);
+    $response['message'] = 'Invalid request method.';
 }
+
+echo json_encode($response);
 ?>
