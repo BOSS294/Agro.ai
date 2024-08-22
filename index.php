@@ -16,8 +16,13 @@
     <meta name="twitter:title" content="Agro Products AI | Smart Plant Disease Detection & Prevention">
     <meta name="twitter:description" content="Utilize AI technology to scan and detect plant diseases early, ensuring healthier crops and maximizing your farm's productivity.">
     <meta name="twitter:image" content="https://www.agroproductsai.com/assets/images/twitter-card.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="Assets/CSS/nav.css">
 </head>
 <body>
+    <?php include "Assets/Resources/nav.php" ?>
     
 </body>
+
 </html>
