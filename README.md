@@ -1,5 +1,11 @@
 # Agro.ai
 
+## Total Commits
+
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/BOSS294/Agro.ai?style=plastic)
+
+
 Welcome to Agro.ai, an advanced AI-powered solution designed to scan and detect diseases in plants. Our innovative technology provides actionable insights and necessary tips to ensure the health and productivity of your plants.
 
 ![Logo](https://res.cloudinary.com/gamerlinecnr/image/upload/v1724356392/86f0c2b8-98dd-46ba-ad78-622afe7fc3a6.png)
