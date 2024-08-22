@@ -19,10 +19,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="stylesheet" href="Assets/CSS/nav.css">
+    <link rel="stylesheet" href="Assets/CSS/main-area.css">
+
 </head>
 <body>
     <?php include "Assets/Resources/nav.php" ?>
-    
+    <?php include "Assets/Contents/main-area.php" ?>
+
 </body>
 
 </html>

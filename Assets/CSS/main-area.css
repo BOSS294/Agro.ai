@@ -1,0 +1,211 @@
+/* Main Area Styles */
+.main-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #000; /* Black background */
+    animation: fadeIn 1s ease-in-out; /* Animation on load */
+}
+
+/* Container Styles */
+.container {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* White shadow */
+    padding: 20px;
+    max-width: 800px; /* Max width for responsiveness */
+    width: 100%; /* Full width up to max-width */
+    display: flex;
+    height: 400px;
+    align-items: center; /* Align items vertically centered */
+    gap: 20px; /* Space between upload and text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    position: relative; /* For positioning hover effects */
+}
+
+/* Hover Effects for Container */
+.container:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Animation for Container on Load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Upload Form Styles */
+.upload-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Upload Container Styles */
+.upload-container {
+    width: 200%; /* Set width for square shape */
+    height: 300px; /* Set height for square shape */
+    position: relative; /* For positioning plus icon */
+    margin-bottom: 50px;
+}
+
+/* Upload Area Styles */
+.upload-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #fff; /* Dashed border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    background-color: #111; /* Slightly lighter black */
+    width: 100%;
+    height: 100%;
+    position: relative; /* For positioning plus icon */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Upload Area */
+.upload-area:hover {
+    background-color: #222; /* Slightly darker background on hover */
+    border-color: #0f0; /* Change border color on hover */
+}
+
+/* Plus Icon Styles */
+.plus-icon {
+    font-size: 48px;
+    color: #fff;
+}
+
+/* Upload Text Styles */
+
+/* Upload Description Styles */
+.upload-description {
+    font-size:15px; /* Larger font size for prominence */
+    font-weight: 500; /* Medium weight for readability */
+    color: #ffffff; /* White text for contrast */
+    margin-top: 10px;
+    text-align: center; /* Center-align text for balance */
+    margin: 20px 0; /* Vertical spacing */
+    margin-left: 30%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    line-height: 1.6; /* Increased line height for readability */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners for modern look */
+    padding: 20px; /* Padding for better spacing */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow for emphasis */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect for Upload Description */
+.upload-description:hover {
+    color: #00ff00; /* Bright green color on hover for a standout effect */
+    transform: scale(1.05); /* Slightly enlarge on hover for emphasis */
+}
+
+/* Hover Effect for Upload Text */
+.upload-text:hover {
+    transform: scale(1.02); /* Slightly enlarge text on hover */
+}
+
+/* Animation on Load */
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.upload-text {
+    animation: textFadeIn 1s ease-out; /* Animation on load */
+}
+/* Progress Container Styles */
+.progress-container {
+    width: 100%;
+    height: 5px;
+    background-color: #333; /* Dark background for progress bar */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #0f0; /* Green background for progress */
+    transition: width 0.4s ease-in-out; /* Smooth transition */
+}
+
+/* Image Preview Styles */
+.image-preview {
+    width: 100%; /* Full width of upload area */
+    height: 100%; /* Full height of upload area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Upload Button Styles */
+.upload-button {
+    margin-top: 15px; /* Space above button */
+    padding: 12px 24px; /* Button padding for a more substantial look */
+    font-size: 16px; /* Button text size */
+    color: #000000; /* White text color */
+    background-color: #fcfffc; /* Bright green background color */
+    border: 2px solid #3f413f; /* Solid border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* White shadow for 3D effect */
+    text-transform: uppercase; /* Uppercase text for modern look */
+    font-weight: bold; /* Bold text for emphasis */
+    outline: none; /* Remove outline on focus */
+    margin-left: 48%;
+}
+
+/* Hover Effect for Upload Button */
+.upload-button:hover {
+    background-color: #00cc00; /* Darker green on hover */
+    border-color: #009900; /* Darker border on hover */
+    transform: translateY(-3px); /* Slightly raise button on hover */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.7); /* Enhanced shadow on hover */
+}
+
+/* Focus Effect for Upload Button */
+.upload-button:focus {
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.5); /* Glow effect on focus */
+}
+
+
+/* File Input Styles */
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
