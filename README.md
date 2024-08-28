@@ -54,7 +54,7 @@ Welcome to Agro.ai, an advanced AI-powered solution designed to scan and detect 
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/agro-ai.git
+    git clone https://github.com/ProtectorGamer/agro-ai.git
     ```
 2. **Navigate to the project directory:**
     ```bash
