@@ -1,9 +1,21 @@
 /* General Footer Styles */
 footer {
-    background-color: #1a1a1a; /* Dark background for contrast */
+    background-color: rgba(26, 26, 26, 0.6); /* Semi-transparent dark background */
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    backdrop-filter: blur(10px); /* Adds a glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Subtle border for depth */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3); /* Slight shadow for elevation */
+    z-index: 1; /* Keeps the footer visible above background elements */
+}
+
+/* Optional: Hover Effect for the Footer */
+footer:hover {
+    background-color: rgba(26, 26, 26, 0.8); /* Slightly less transparent on hover */
+    backdrop-filter: blur(12px); /* Increase blur on hover */
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .footer-container {

@@ -1,0 +1,93 @@
+/* About Us Page Container */
+.about-us {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff; /* White text for visibility */
+    padding: 50px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Glass-like effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Soft white shadow */
+    max-width: 1200px; /* Max width for responsiveness */
+    margin: 50px auto; /* Center the container */
+}
+
+/* Header */
+.about-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* Section Styling */
+.about-container section {
+    margin-bottom: 40px;
+}
+
+.about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-members {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Customize the scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #333; /* Track background */
+    border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000; /* Scrollbar color */
+    border-radius: 10px; /* Round the corners */
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
+}
+.team-member {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    max-width: 250px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    color: rgba(255, 255, 255, 0.8); /* Slightly lighter text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+}

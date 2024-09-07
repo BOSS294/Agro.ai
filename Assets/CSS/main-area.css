@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
-    background-color: #000; /* Black background */
 }
 /* Customize the scrollbar for WebKit browsers */
 ::-webkit-scrollbar {
@@ -28,10 +27,10 @@
 
 /* Container Styles */
 .container {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black (glass effect) */
+    color: #fff; /* White text for contrast */
     border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); /* White shadow */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* Softer white shadow for subtle glow */
     padding: 20px;
     max-width: 800px; /* Max width for responsiveness */
     width: 100%; /* Full width up to max-width */
@@ -39,16 +38,34 @@
     height: 400px;
     align-items: center; /* Align items vertically centered */
     gap: 20px; /* Space between upload and text */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
     position: relative; /* For positioning hover effects */
-    animation: scale-up-hor-left   1s ease; /* Animation on load */
-
+    backdrop-filter: blur(10px); /* Adds a glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Border for enhanced look */
+    animation: scale-up-hor-left 1s ease; /* Animation on load */
 }
 
 /* Hover Effects for Container */
 .container:hover {
     transform: scale(1.02); /* Slightly enlarge on hover */
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5); /* Enhanced shadow on hover */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3); /* Enhanced glow on hover */
+    backdrop-filter: blur(12px); /* Slightly more blur on hover */
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Keyframe for entry animation */
+@keyframes scale-up-hor-left {
+    0% {
+        transform: scaleX(0.4);
+        transform-origin: 100% 100%;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
 }
 
 .scale-up-hor-left {

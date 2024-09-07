@@ -23,10 +23,31 @@
 
     <link rel="stylesheet" href="Assets/CSS/main-area.css">
     <link rel="stylesheet" href="Assets/CSS/footer.css">
+    <style>
+  #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the video covers the entire area */
+        z-index: -1; /* Keeps it behind the content */
+    }
 
+    </style>
 </head>
 <body>
+    <!-- Background Video with multiple sources -->
+    <video autoplay muted loop id="background-video">
+        <source src="https://juitinitiatives.online/Assets/Resources/background.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+
     <?php include "Assets/Resources/nav.php" ?>
+
+
+
     <?php include "Assets/Contents/main-area.php" ?>
     <?php include "Assets/Resources/footer.php" ?>
 

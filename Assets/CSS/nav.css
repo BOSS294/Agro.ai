@@ -9,12 +9,23 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent dark background */
     padding: 15px 30px;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Soft shadow */
     position: relative;
     flex-wrap: wrap;
+    backdrop-filter: blur(10px); /* Adds a glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Subtle border for depth */
+    z-index: 10; /* Ensure it stays above background elements */
+}
+
+/* Optional: Hover Effect */
+nav:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly less transparent on hover */
+    backdrop-filter: blur(12px); /* Increase blur on hover */
+    -webkit-backdrop-filter: blur(12px);
 }
 
 /* Logo Styles */

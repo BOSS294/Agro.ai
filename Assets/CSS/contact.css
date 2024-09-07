@@ -1,0 +1,135 @@
+/* Container for the contact page */
+.contanct {
+    background-color: rgba(0, 0, 0, 0.6); /* Same transparent theme */
+    color: #fff; /* White text for visibility */
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Adds a glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Soft white shadow */
+    max-width: 900px; /* Max width for the contact page */
+    margin: 50px auto; /* Center the container */
+    text-align: center;
+}
+
+/* Contact header */
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff; /* White text for the header */
+}
+
+/* Contact info section */
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Form styling */
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: #fff; /* White text inside the form */
+    backdrop-filter: blur(5px); /* Light blur for input fields */
+    -webkit-backdrop-filter: blur(5px); /* Safari compatibility */
+    transition: border 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Semi-transparent placeholders */
+}
+
+/* Hover effect for inputs */
+input:focus, textarea:focus {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+/* Submit button */
+.submit-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff4b5c; /* Highlighted red color */
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+    background-color: #ff6b7b; /* Slightly lighter red on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contanct {
+        padding: 20px;
+    }
+
+    input, textarea {
+        padding: 10px;
+    }
+
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+/* Add Google Material Icons */
+.contact-info i, .contact-form .icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #fff; /* White icons to match the theme */
+    vertical-align: middle; /* Align icons with text */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Styling for icons in form fields */
+.contact-form .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    flex: 1; /* Allow inputs to take remaining space */
+    padding-left: 40px; /* Space for the icon */
+}
+/* Customize the scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #333; /* Track background */
+    border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000; /* Scrollbar color */
+    border-radius: 10px; /* Round the corners */
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar color on hover */
+}
+.contact-form .icon {
+    position: absolute; /* Position icon inside input field */
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevents icon from interfering with input */
+}
